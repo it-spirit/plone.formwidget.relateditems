@@ -56,6 +56,7 @@ setup(
     extras_require={
         'testfixture': testfixture_requires,
         'test': [
+            'plone.app.z3cform[tests]',
             'plone.app.robotframework[debug]',
             'plone.app.testing',
             'robotframework-selenium2screenshots',
