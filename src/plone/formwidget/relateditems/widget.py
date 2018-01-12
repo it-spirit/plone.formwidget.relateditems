@@ -34,10 +34,14 @@ class RelatedItemsWidget(BaseWidget):
     """An advanced related items widget for Plone."""
 
     content_type = None
+    content_type_title = None
     initial_path = None
 
     @property
     def portal_type_name(self):
+        if self.content_type_title:
+            return self.content_type_title
+
         if not self.content_type:
             return
         fti = getUtility(IDexterityFTI, name=self.content_type)
