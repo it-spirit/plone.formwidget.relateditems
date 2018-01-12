@@ -11,6 +11,7 @@ from z3c.form.interfaces import IFormLayer
 from z3c.form.widget import FieldWidget
 from zope.component import adapter
 from zope.component import getUtility
+from zope.i18n import translate
 from zope.interface import implementer
 from zope.interface import implementer_only
 from zope.schema.interfaces import IField
@@ -68,7 +69,13 @@ class RelatedItemsWidget(BaseWidget):
             return widget
 
         add_resource_on_request(self.request, 'ploneformwidgetrelateditems')
-        title = u'Add {0}'.format(self.portal_type_name)
+        title = translate(
+            'heading_add_item',
+            domain='plone',
+            mapping={'itemtype': self.portal_type_name},
+            context=self.request,
+            default='Add ${itemtype}',
+        )
         return MARKUP.format(
             klass=u'context',
             title=title,
