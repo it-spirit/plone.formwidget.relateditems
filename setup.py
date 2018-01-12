@@ -5,7 +5,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = '0.1.dev0'
+version = '0.1'
 description = 'An advanced related items widget for Plone.'
 long_description = '\n\n'.join([
     open('README.rst').read(),
