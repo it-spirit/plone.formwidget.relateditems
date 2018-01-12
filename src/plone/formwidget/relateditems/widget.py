@@ -17,7 +17,7 @@ from zope.interface import implementer_only
 from zope.schema.interfaces import IField
 
 
-MARKUP = """
+MARKUP = u"""
 <div class="relateditems-addnew">
   <a class="{klass} pat-plone-modal" target="_blank" href="{url}">{title}</a>
 </div>
