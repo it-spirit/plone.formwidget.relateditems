@@ -59,6 +59,10 @@ class RelatedItemsWidget(BaseWidget):
 
     def render(self):
         widget = super(RelatedItemsWidget, self).render()
+
+        if self.mode != 'input':
+            return widget
+
         if self.content_type is None:
             return widget
 
