@@ -18,7 +18,7 @@ from zope.schema.interfaces import IField
 
 MARKUP = """
 <div class="relateditems-addnew">
-  <a class="{klass}" target="_blank" href="{url}">{title}</a>
+  <a class="{klass} pat-plone-modal" target="_blank" href="{url}">{title}</a>
 </div>
 {widget}
 """
