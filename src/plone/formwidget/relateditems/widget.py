@@ -5,6 +5,7 @@ from plone import api
 from plone.app.z3cform.interfaces import IRelatedItemsWidget as IBaseWidget
 from plone.app.z3cform.widget import RelatedItemsWidget as BaseWidget
 from plone.dexterity.interfaces import IDexterityFTI
+from Products.CMFPlone.resources import add_resource_on_request
 from z3c.form.interfaces import IFieldWidget
 from z3c.form.interfaces import IFormLayer
 from z3c.form.widget import FieldWidget
@@ -16,7 +17,7 @@ from zope.schema.interfaces import IField
 
 
 MARKUP = """
-<div>
+<div class="relateditems-addnew">
   <a class="{klass}" target="_blank" href="{url}">{title}</a>
 </div>
 {widget}
@@ -66,6 +67,7 @@ class RelatedItemsWidget(BaseWidget):
         if self.content_type is None:
             return widget
 
+        add_resource_on_request(self.request, 'ploneformwidgetrelateditems')
         title = u'Add {0}'.format(self.portal_type_name)
         return MARKUP.format(
             klass=u'context',
