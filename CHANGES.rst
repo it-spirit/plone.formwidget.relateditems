@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2 (unreleased)
+0.2 (2018-01-18)
 ----------------
 
 - Add custom display widget.
